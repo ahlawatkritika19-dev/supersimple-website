@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>improved-calculator</title>
+    <style>
+      body{
+        background-color: black;
+        color:white;
+      }
+      .btn-number{
+        background-color: rgb(62, 60, 60);
+        color:white;
+        font-size:medium;
+        width:42px;
+        height:42px;
+        border-radius:21px;
+        font-family:arial;
+      }
+      .btn-operator{
+        background-color: orange;
+        color:white;
+        font-size:medium;
+        width:42px;
+        height:42px;
+        border-radius:21px;
+        border-color:orange;
+        font-family:arial;
+      }
+      .btn-clear{
+      background-color:rgb(62,60,60);
+      color:white;
+      width:44px;
+      height:44px;
+      border-radius:22px;
+      text-align: center;
+      font-family:arial;
+      }
+      .btn-calculation{
+        font-size:70px;
+        font-family:arial;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <button  class="btn-number"   onclick="updateCalculation(1);">1</button>
+      <button class="btn-number" onclick="updateCalculation(2);">2</button>
+      <button  class="btn-number" onclick="updateCalculation(3);">3</button>
+      <button  class="btn-operator"   onclick="updateCalculation(' + ');">+</button>
+    </p>
+    <p>
+      <button class="btn-number" onclick="updateCalculation(4);">4</button>
+      <button class="btn-number" onclick="updateCalculation(5);">5</button>
+      <button class="btn-number" onclick="updateCalculation(6);">6</button>
+      <button  class="btn-operator"  onclick="updateCalculation(' - ');">-</button>
+    </p>
+    <p>
+      <button class="btn-number"  onclick="updateCalculation(7);">7</button>
+      <button class="btn-number"  onclick="updateCalculation(8);">8</button>
+      <button class="btn-number" onclick="updateCalculation(9);">9</button>
+      <button class="btn-operator" onclick="updateCalculation(' * ');">*</button>
+    </p>
+    <p>
+      <button class="btn-number" onclick="updateCalculation(0);">0</button>
+      <button  class="btn-number"   onclick="
+      calculation+='.';
+      displayCalculation();
+      localStorage.setItem('calculation',calculation); 
+      ">.</button>
+      
+      <button class="btn-number" onclick="
+      let result = eval(calculation);
+      calculation = String(Number(result.toFixed(10)));
+      displayCalculation();
+      localStorage.setItem('calculation',calculation);
+      ">=</button>
+      <button class="btn-operator"  onclick="
+       calculation+=' / ';
+       displayCalculation();
+      localStorage.setItem('calculation',calculation);
+      ">/</button>
+    </p>
+    <p>
+      <button class="btn-clear"  onclick="
+        calculation = '';
+        displayCalculation();
+        localStorage.removeItem('calculation',calculation);
+        ">Clear</button>
+    </p>
+    <p class="js-calculation  btn-calculation"></p>
+    <script>
+      let isNewCalculation = false;
+     let calculation = localStorage.getItem('calculation') || '';
+     displayCalculation();
+
+     function updateCalculation(value){
+      if (isNewCalculation && !['+', '-', '*', '/'].includes(value)){
+        calculation = '';
+        isNewCalculation = false;
+      } else {
+        isNewCalculation = false;
+      }
+      calculation += value;
+      displayCalculation();
+      localStorage.setItem('calculation', calculation);
+     }
+     function evaluateCalculate(){
+      if (calculation){
+        try {
+          calculation  = String(eval(calculation));
+          displayCalculation();
+          localStorage.setItem('calculation', calculation);
+          isNewCalculation = true;
+        } catch (error){
+          calculation = 'Error';
+          displayCalculation();
+          calculation = '';
+        }
+      }
+     }
+     function displayCalculation(){
+      document.querySelector('.js-calculation')
+      .innerHTML = calculation;
+     }
+    </script>
+  </body>
+</html>

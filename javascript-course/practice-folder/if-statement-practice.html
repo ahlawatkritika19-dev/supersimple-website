@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <title>if-practice</title>
+</head>
+<body>
+  <script>
+  /* let variable1=6;
+   let name='kritika ahlawat'
+   if(variable1>=6 && variable1<=12){
+    console.log(`Good Morniing!:${name}`);
+   }
+   let variable2=18;
+   let result2='';
+   if(variable2>=13 && variable2<=17){
+    result2='Good afternoon!';
+    console.log(`Good afternoon!:${name}`);
+   } else{
+    console.log(`Good night!:${name}`);
+   }
+*/
+/*let age=4;
+const isholiday=true;
+if((age<=6 || age>=65) &&(isholiday==false)){
+  console.log('discount');
+}
+else{
+  console.log('no discount');
+}*/
+let randomNumber=Math.random();
+let result = '';
+ if(randomNumber < '0.5')
+ {
+  result='head';
+ }
+  else{
+    result='tail';
+  }
+  let guess='heads';
+  
+  if(guess === result){
+    console.log('you win!');
+  } else {
+    console.log('you lose!');
+  }
+ const resultTernary = randomNumber<0.5? 'heads' : 'tails';
+ const messagec = guess === resultTernary ? 'you win!' : 'you lose!';
+  console.log(`the result was :${resultTernary}`);
+  console.log(message);
+
+
+  </script>
+</body>
+</html>

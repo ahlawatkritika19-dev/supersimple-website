@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>practice-object</title>
+  </head>
+    <body>
+  <script>
+    const product = {
+    name: 'Basketball',
+    price: 2095
+    };
+    console.log(product);
+     product.price += 500;
+     console.log(product);
+     product['delivery-time'] = '3 days';
+     console.log(product);
+     function comparePrice(product1,product2){
+      if (product1.price<product2.price){
+        return product1;
+      } else {
+        return product2;
+      }
+     }
+
+    const productA = { name: 'socks', price:1090};
+    const productB = { name: 'shirt', price:2050};
+    console.log(comparePrice(productA,productB));
+
+    function isSameProduct(product3,product4){
+      if(
+        product3.name === product4.name &&
+        product3.price === product4.price
+      ){
+        return true;
+      } else {
+        return false;
+      }
+    }
+    const productD = {name: 'socks', price:1090};
+    const productE = {name: 'socks', price:1090 };
+    const productC = {name:'shirt', price:2000 };
+   console.log(isSameProduct(productD,productE));
+   console.log(isSameProduct(productE,productC));
+    console.log('Good Morning' .toLowerCase());
+    console.log('test' .repeat(2));
+  </script>
+  </body>
+</html>

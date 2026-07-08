@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>funtions-practice</title>
+  </head>
+  <body>
+    
+    <script>
+    /*  function greet( name){
+        if(name  === undefined ){
+        alert (`hi there!`);}
+      else{
+        alert(`hello!${name}`);
+      }
+    }greet(  );
+      greet('ahlawat'); */
+
+    function convertToFahernheit(25){
+      console.log(`Fahernheit = ${celsius*9/5+32}`);
+      
+    }
+     convertToFahernheit(25);
+    function convertToCelsius(fahernheit){
+      console.log(`celsius=${(fahernheit-32)*5/9}`);
+    }
+    convertToCelsius(86);
+     
+    function convertTemperature(degrees,unit){
+      if(unit === 'C'){
+      let fahrenheight = (degree*9/5+32);
+      console.log(`Fahernheit = ${fahrenheit}C`);
+    } else if( unit === 'F'){
+      let celsius = (degree-32)*5/9;
+      console.log(`Celsius=${celsius}F`);
+    }else{
+      console.log("invalid unit.use 'C' or 'F'."
+    }
+  
+  
+  }
+    convertTemperature(25,'C');
+    convertTemperature(86,'F');
+
+    </script>
+  </body>
+</html>
