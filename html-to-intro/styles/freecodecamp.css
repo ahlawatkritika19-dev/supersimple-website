@@ -1,0 +1,28 @@
+.p-p{
+    font-size:24px;
+    margin-bottom:0px;
+  }
+  .free-p{
+    font-weight:bold;
+    margin-right:2px;
+  }
+  .code-p{
+    color:grey;
+    font-weight: 300;
+  }
+  .as-p{
+    font-size:20px;
+    font-weight:600px;
+    width:580px;
+    margin-top:0px;
+    margin-bottom:10px;
+  }
+  .here-p{
+    font-size:20px;
+    font-weight:600px;
+    margin-top:10px;
+
+  }
+  .ch-p{
+    color:skyblue;
+  }

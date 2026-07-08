@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .card{
+        display:flex;
+        align-items:center;
+        padding:10px;
+        border:1px; solid #ccc;
+        width:300px;
+        font-family:arial;
+      }
+      .profile-pic{
+        width:50px;
+        height:50px;
+        border-radius:25px;
+        object-fit:cover;
+        margin-right:12px;
+      }
+      .info{
+        flex:1;
+        display:flex;
+        flex-direction: column;
+      }
+      .name{
+        font-weight: bold;
+        margin:0px;
+      }
+      .role,.status{
+        color:gray;
+        font-size:14px;
+        margin:2px 0;
+      }
+      .follow-btn{
+        background-color:#1d9bf0;
+        color:white;
+        border:none;
+        padding:8px 16px;
+        border-radius:20px;
+        font-weight:bold;
+        cursor:pointer;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <div class="card">
+      
+       <img class="profile-pic" src="thumbnails/cat.jpg"> 
+    
+      <div class="info">
+        <p class="name">oliver</p>
+        <p class="role">the cat</p>
+        <p class="status">Popular</p>
+        
+      </div>
+      <button class="follow-btn">Follow</button>
+    </div>
+  </body>
+</html>
